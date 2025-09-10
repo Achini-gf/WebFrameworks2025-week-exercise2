@@ -1,12 +1,25 @@
-import './App.css'
+import React from "react";
+import CourseList from "./CourseList";
 
-function App() {
-
-  return (
-    <>
-      <div>Week exercise 2 - Read README.md for instructions</div>
-    </>
-  )
+export interface CourseType {
+  name: string;
+  courseId: string;
+  studentPositions: number;
 }
 
-export default App
+function App() {
+  const courses: CourseType[] = [
+    { name: "HTML", courseId: "Y242-444", studentPositions: 30 },
+    { name: "JavaScript Basics", courseId: "Y242-445", studentPositions: 35 },
+    { name: "JavaScript Advanced", courseId: "Y242-446", studentPositions: 40 },
+    { name: "React", courseId: "Y242-447", studentPositions: 25 },
+  ];
+
+  return (
+    <div>
+      <CourseList courses={courses} />
+    </div>
+  );
+}
+
+export default App;
